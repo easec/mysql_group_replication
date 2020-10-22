@@ -1,3 +1,5 @@
+#!/bin/bash
+
 for N in 1 2 3
 do docker run -d --name=node$N --net=groupnet --hostname=node$N \
   -v $PWD/d$N:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=easec \
