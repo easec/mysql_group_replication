@@ -1,3 +1,5 @@
+#!/bin/bash
+
 docker exec -it node1 mysql -uroot -peasec \
   -e "SET @@GLOBAL.group_replication_bootstrap_group=1;" \
   -e "create user 'repl'@'%';" \
