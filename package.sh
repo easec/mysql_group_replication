@@ -5,7 +5,7 @@ docker network create mysql_net
 docker pull mysql/mysql-server:8.0
 
 for N in 1 2 3
-do docker run -d --name=node$N --net=groupnet --hostname=node$N \
+do docker run -d --name=node$N --net=mysql_net --hostname=node$N \
   -v $PWD/d$N:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=easec \
   mysql/mysql-server:8.0 \
   --server-id=$N \
